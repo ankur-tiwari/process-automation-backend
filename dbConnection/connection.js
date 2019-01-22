@@ -1,15 +1,14 @@
 const Sequelize = require('sequelize');
-
-const sequelize = new Sequelize('tennisDB', 'tennisMaster', 'tennisMasterPwd', {
-  host: 'tennisdbid.cpbhtf5bcxzm.us-east-1.rds.amazonaws.com',
-  dialect: 'postgres',
+const bcrypt = require('bcryptjs')
+const sequelize = new Sequelize(process.env.MSSQL_DB, process.env.MSSQL_USER, process.env.MSSQL_PASSWORD, {
+  dialect: 'mssql',
+  host: process.env.MSSQL_HOST,
   operatorsAliases: false,
+  dialectOptions: {
+    encrypt: true
+  },
   logging: false,
-  define: {
-    timestamps: true
-} 
 });
-
 
 sequelize
   .authenticate()
@@ -19,9 +18,5 @@ sequelize
   .catch(err => {
     console.error('Unable to connect to the database:', err);
   });
-
-
-
-
 
 module.exports = sequelize;
