@@ -1,10 +1,11 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('static-favicon');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var logger = require('morgan');
+const express = require('express');
+const favicon = require('static-favicon');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+const constants = require('./constant.json')
 require('dotenv').config()
+require('path');
 require("./dbConnection/connection")
 var routes = require('./routes/adminRoutes');
 
@@ -20,12 +21,10 @@ app.use('/', routes);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    res.send("NO SUCH URL")
+    res.status(constants.HttpStatus.NOT_FOUND)
+    res.send(constants.ERROR.NO_URL_FOUND)
 });
 
-/// error handlers
 
 // development error handler
 // will print stacktrace
@@ -42,7 +41,7 @@ if (app.get('env') === 'development') {
 
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.send('Something Went Wrong');
+    res.send(constants.ERROR.SOMETHING_WENT_WRONG);
 });
 
 module.exports = app;

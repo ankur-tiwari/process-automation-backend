@@ -1,11 +1,5 @@
 const models = require('../models/index');
 
-exports.repo = () => {
-    return new Promise((resolve, reject) => {
-            return resolve("TEST API SUCCESS")
-    });
-};
-
 exports.userAuth = (data) => {
     return new Promise((resolve, reject) => {
         models.login.findAll( {where : {

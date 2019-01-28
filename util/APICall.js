@@ -1,10 +1,9 @@
 const axios = require('axios');
-
+const config = require('../config.json')
 exports.ssmInviteAPI = (email) => {
     return new Promise((resolve, reject) => {
-        
     let body = {
-        email : 'rishic71@gmail.com'
+        email : email
     }
     let headers = {
         'X-SSM-Token':process.env.APIKEY,
@@ -12,7 +11,7 @@ exports.ssmInviteAPI = (email) => {
         'Content-Type': 'application/json'
     }
     
-    axios.post('https://screenshotmonitor.com/api/v2/InviteEmployee', body, {headers: headers})
+    axios.post(`${config.SSM_BASE_URL}/InviteEmployee`, body, {headers: headers})
     .then(()=>{
         return resolve()
 
