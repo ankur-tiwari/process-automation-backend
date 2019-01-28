@@ -14,3 +14,15 @@ exports.userAuth = (data) => {
     });
 };
 
+exports.googleUsersList = () => {
+    return new Promise((resolve, reject) => {
+        models.googleUsers.findAll({ raw : true })
+        .then((result) => {
+            return resolve(result)
+        })
+        .catch((error) => {
+            return reject(error);
+        });
+    });
+};
+

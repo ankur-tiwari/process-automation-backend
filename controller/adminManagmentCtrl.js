@@ -23,6 +23,18 @@ exports.authenticateLogin = (req, res) => {
     })
 };
 
+exports.googleUserList = (req, res) => {
+    adminAuth.googleUsersList()
+    .then((userList) =>{
+        res.status(constants.HttpStatus.OK)
+        res.send(userList)
+    })
+    .catch((err)=>{
+        res.status(constants.HttpStatus.INTERNAL_SERVER_ERROR)
+        res.send(err)
+    })
+};
+
 exports.ssmInviteAPI = (req, res) => {
     let data = req.body
     adminServices.ssmInviteAPI(data)

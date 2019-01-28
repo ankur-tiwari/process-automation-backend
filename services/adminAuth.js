@@ -38,3 +38,15 @@ exports.loginToken = (data) => {
         return resolve(token)
     });
 };
+
+exports.googleUsersList = () => {
+    return new Promise((resolve, reject) => {
+        repository.googleUsersList()
+        .then((userList)=>{
+            return resolve(userList)
+        })
+            .catch((err) => {
+                return reject(err)
+            })
+    })
+};

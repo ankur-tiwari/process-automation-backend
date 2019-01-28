@@ -6,5 +6,7 @@ router.post('/login', adminManagmentCtrl.authenticateLogin)
 
 router.post('/SSMInvite', adminManagmentCtrl.ssmInviteAPI)
 
+router.get('/googleUserList', adminManagmentCtrl.googleUserList)
+
 
 module.exports = router;
