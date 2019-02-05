@@ -5,8 +5,6 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const constants = require('./constant.json')
 require('dotenv').config()
-require('path');
-require("./dbConnection/connection")
 var routes = require('./routes/adminRoutes');
 
 var app = express();

@@ -1,8 +1,8 @@
 const APICalling = require('../util/APICall')
 
-exports.ssmInviteAPI = (data) => {
+exports.SSMInvite = (data) => {
     return new Promise((resolve, reject) => {
-        APICalling.ssmInviteAPI(data.email)
+        APICalling.SSMInvite(data.email)
         .then(() => {
                 return resolve()
             })

@@ -1,6 +1,7 @@
 const axios = require('axios');
 const config = require('../config.json')
-exports.ssmInviteAPI = (email) => {
+
+exports.SSMInvite = (email) => {
     return new Promise((resolve, reject) => {
     let body = {
         email : email

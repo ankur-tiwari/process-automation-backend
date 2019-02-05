@@ -35,9 +35,9 @@ exports.googleUserList = (req, res) => {
     })
 };
 
-exports.ssmInviteAPI = (req, res) => {
+exports.SSMInvite = (req, res) => {
     let data = req.body
-    adminServices.ssmInviteAPI(data)
+    adminServices.SSMInvite(data)
     .then((data) =>{
         res.status(constants.HttpStatus.OK)
         res.send(data)
