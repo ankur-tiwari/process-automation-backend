@@ -8,6 +8,9 @@
       "NOT_AUTHORIZED": "Request not authorized.",
       "NO_URL_FOUND" : "NO SUCH URL",
       "SOMETHING_WENT_WRONG" : "Something Went Wrong"
+    },
+    "SUCCESS" : {
+      "SSM_SUCCESS" : "Invitation Successfully send"
     }
 }
 

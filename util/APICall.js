@@ -1,5 +1,6 @@
 const axios = require('axios');
 const config = require('../config.json')
+const constants = require('../constant.json');
 
 exports.SSMInvite = (email) => {
     return new Promise((resolve, reject) => {
@@ -14,11 +15,11 @@ exports.SSMInvite = (email) => {
     
     axios.post(`${config.SSM_BASE_URL}/InviteEmployee`, body, {headers: headers})
     .then(()=>{
-        return resolve()
+        return resolve(constants.SUCCESS.SSM_SUCCESS)
 
     })
-    .catch((err)=>{
-        return reject()
+    .catch(()=>{
+        return reject(constants.ERROR)
     })
 })
 }
