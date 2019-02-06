@@ -15,14 +15,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use('/', routes);
-
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, access-control-allow-origin')
+    res.setHeader('Access-Control-Allow-Headers', '*')
     next();
 })
+
+app.use('/', routes);
 
   
 /// catch 404 and forwarding to error handler
