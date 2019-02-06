@@ -15,11 +15,11 @@ exports.SSMInvite = (email) => {
     
     axios.post(`${config.SSM_BASE_URL}/InviteEmployee`, body, {headers: headers})
     .then(()=>{
-        return resolve(constants.SUCCESS.SSM_SUCCESS)
+        return resolve(constants.SSM_INVITE_SUCCESS)
 
     })
     .catch(()=>{
-        return reject(constants.ERROR)
+        return reject(constants.SSM_INVITE_FAIL)
     })
 })
 }

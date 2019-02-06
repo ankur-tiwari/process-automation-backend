@@ -9,8 +9,14 @@
       "NO_URL_FOUND" : "NO SUCH URL",
       "SOMETHING_WENT_WRONG" : "Something Went Wrong"
     },
-    "SUCCESS" : {
-      "SSM_SUCCESS" : "Invitation Successfully send"
+    "SSM_INVITE_SUCCESS" : {
+      "SUCCESS" : true,
+      "MESSAGE" : "Invitation Successfully send"
+    },
+    "SSM_INVITE_FAIL" : {
+      "SUCCESS" : false,
+      "MESSAGE" : "Something Went Wrong Invitation Not Sent"
     }
+
 }
 
