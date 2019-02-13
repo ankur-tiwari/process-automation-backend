@@ -1,16 +1,15 @@
 module.exports = (sequelize, DataTypes) => {
-    const login = sequelize.define("login", {
-        users : {
+    const googleUsers = sequelize.define("googleUsers", {
+        email : {
             type: DataTypes.STRING,
             primaryKey: true,
             autoIncrement: false,
         },
-        password: DataTypes.STRING,
-       },
-       {
+        role : DataTypes.STRING
+       },{
         id : false,
         timestamps: false,
-        tableName: 'login_auth'
+        tableName: 'google_login_users'
     });
-    return login;
+    return googleUsers;
 };

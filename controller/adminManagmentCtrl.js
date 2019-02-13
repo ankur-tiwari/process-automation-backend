@@ -1,49 +1,27 @@
-const adminServices = require('../services/adminManagmentService')
-const adminAuth = require('../services/adminAuth')
+const adminServices = require('../services/adminManagmentService');
+const adminAuth = require('../services/adminAuth');
 const constants = require('../constant.json');
 
-exports.authenticateLogin = (req, res) => {
-    let data = req.body
-    adminAuth.checkAdmin(data)
-    .then((adminData)=> {
-        return adminAuth.checkPass(data, adminData)
-    })
-    .then(() => {
-        return adminAuth.loginToken(data)
-    })
-    .then((token) => {
-        let json = {}
-        json.token = token
-        json.success = true
-        res.send(json)
-    })
-    .catch((err)=>{
-        res.status(constants.HttpStatus.INTERNAL_SERVER_ERROR)
-        res.send(err)
-    })
-};
-
-exports.googleUserList = (req, res) => {
-    adminAuth.googleUsersList()
+exports.getGoogleUserList = (request, response) => {
+    adminAuth.getGoogleUsersList()
     .then((userList) =>{
-        res.status(constants.HttpStatus.OK)
-        res.send(userList)
+        response.status(constants.HttpStatus.OK)
+        response.send(userList)
     })
-    .catch((err)=>{
-        res.status(constants.HttpStatus.INTERNAL_SERVER_ERROR)
-        res.send(err)
+    .catch((error)=>{
+        response.status(constants.HttpStatus.INTERNAL_SERVER_ERROR)
+        response.send(error)
     })
 };
 
-exports.SSMInvite = (req, res) => {
-    let data = req.body
-    adminServices.SSMInvite(data)
+exports.SSMInvite = (request, response) => {
+    adminServices.SSMInvite(request.body)
     .then((data) =>{
-        res.status(constants.HttpStatus.OK)
-        res.send(data)
+        response.status(constants.HttpStatus.OK)
+        response.send(data)
     })
-    .catch((err)=>{
-        res.status(constants.HttpStatus.INTERNAL_SERVER_ERROR)
-        res.send(err)
+    .catch((error)=>{
+        response.status(constants.HttpStatus.INTERNAL_SERVER_ERROR)
+        response.send(error)
     })
 };

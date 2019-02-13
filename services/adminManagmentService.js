@@ -1,13 +1,13 @@
 const APICalling = require('../util/APICall')
 
-exports.SSMInvite = (data) => {
+exports.SSMInvite = (SSMData) => {
     return new Promise((resolve, reject) => {
-        APICalling.SSMInvite(data.email)
+        APICalling.SSMInvite(SSMData.email)
         .then((res) => {
                 return resolve(res)
             })
-            .catch((err) => {
-                return reject(err)
+            .catch((error) => {
+                return reject(error)
             })
     })
 }
