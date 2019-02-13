@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const constants = require('./constant.json')
 const app = express();
-require('dotenv').config()
+require('dotenv').config();
 const routes = require('./routes/routes');
 
 
@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use((request, response, next) => {
     response.setHeader('Access-Control-Allow-Origin', '*');
     response.setHeader('Access-Control-Allow-Methods', '*');
-    response.setHeader('Access-Control-Allow-Headers', '*')
+    response.setHeader('Access-Control-Allow-Headers', '*');
     next();
 })
 

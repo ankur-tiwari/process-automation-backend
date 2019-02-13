@@ -11,7 +11,7 @@
     },
     "SSM_INVITE_SUCCESS" : {
       "SUCCESS" : true,
-      "MESSAGE" : "Invitation Successfully send"
+      "MESSAGE" : "Invitation Successfully Sent"
     },
     "SSM_INVITE_FAIL" : {
       "SUCCESS" : false,
