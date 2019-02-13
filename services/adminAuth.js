@@ -1,8 +1,8 @@
-const repository = require('../repository/adminRepo');
+const googleAuthRepository = require('../repository/googleAuthRepo');
 
 exports.getGoogleUsersList = () => {
     return new Promise((resolve, reject) => {
-        repository.getGoogleUsersList()
+        googleAuthRepository.getGoogleUsersList()
         .then((googleuserList)=>{
             return resolve(googleuserList)
         })

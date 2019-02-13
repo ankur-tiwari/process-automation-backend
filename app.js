@@ -4,10 +4,9 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const constants = require('./constant.json')
-const app = express();
 require('dotenv').config();
+const app = express();
 const routes = require('./routes/routes');
-
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -24,13 +23,11 @@ app.use((request, response, next) => {
 
 app.use('/', routes);
 
-  
 // catch 404 and forwarding to error handler
 app.use(function(request, response, next) {
     response.status(constants.HttpStatus.NOT_FOUND)
     response.send(constants.ERROR.NO_URL_FOUND)
 });
-
 
 // development error handler
 // will print stacktrace
@@ -43,7 +40,6 @@ if (app.get('env') === 'development') {
         });
     });
 }
-
 
 app.use(function(error, request, response, next) {
     response.status(error.status || 500);
