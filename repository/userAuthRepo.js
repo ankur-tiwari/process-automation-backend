@@ -3,8 +3,8 @@ const models = require('../models/index');
 exports.getAuthorizedUsersList = () => {
     return new Promise((resolve, reject) => {
         models.authorizedUsers.findAll({ raw : true })
-        .then((authorizedUsers) => {
-            return resolve(authorizedUsers);
+        .then((authorizedUsersList) => {
+            return resolve(authorizedUsersList);
         })
         .catch((error) => {
             return reject(error);
