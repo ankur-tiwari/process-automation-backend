@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
-const adminManagmentCtrl = require('../controller/adminManagmentCtrl');
+const express = require('express');
+const router = express.Router();
+const adminManagementCtrl = require('../controller/adminManagementCtrl');
 
-router.post('/SSMInvite', adminManagmentCtrl.SSMInvite);
+router.post('/SSMInvite', adminManagementCtrl.SSMInvite);
 
-router.get('/getGoogleUserList', adminManagmentCtrl.getGoogleUserList);
+router.get('/getAuthorizedUsers', adminManagementCtrl.getAuthorizedUsers);
 
 module.exports = router;

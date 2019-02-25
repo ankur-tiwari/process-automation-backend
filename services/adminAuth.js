@@ -1,13 +1,13 @@
-const googleAuthRepository = require('../repository/googleAuthRepo');
+const userAuthRepository = require('../repository/userAuthRepo');
 
-exports.getGoogleUsersList = () => {
+exports.getAuthorizedUsers = () => {
     return new Promise((resolve, reject) => {
-        googleAuthRepository.getGoogleUsersList()
+        userAuthRepository.getAuthorizedUsersList()
         .then((googleuserList)=>{
-            return resolve(googleuserList)
+            return resolve(googleuserList);
         })
         .catch((error) => {
-            return reject(error)
+            return reject(error);
         })
     })
 };

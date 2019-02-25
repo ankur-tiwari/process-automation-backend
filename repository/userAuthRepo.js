@@ -1,10 +1,10 @@
 const models = require('../models/index');
 
-exports.getGoogleUsersList = () => {
+exports.getAuthorizedUsersList = () => {
     return new Promise((resolve, reject) => {
-        models.googleUsers.findAll({ raw : true })
-        .then((googleUsers) => {
-            return resolve(googleUsers);
+        models.authorizedUsers.findAll({ raw : true })
+        .then((authorizedUsers) => {
+            return resolve(authorizedUsers);
         })
         .catch((error) => {
             return reject(error);

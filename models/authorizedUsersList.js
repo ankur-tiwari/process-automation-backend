@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const googleUsers = sequelize.define("googleUsers", {
+    const authorizedUsers = sequelize.define("authorizedUsers", {
         email : {
             type: DataTypes.STRING,
             primaryKey: true,
@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
        },{
         id : false,
         timestamps: false,
-        tableName: 'google_login_users'
+        tableName: 'authorized_users'
     });
-    return googleUsers;
+    return authorizedUsers;
 };

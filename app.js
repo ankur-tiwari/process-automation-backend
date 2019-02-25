@@ -3,7 +3,7 @@ const favicon = require('static-favicon');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
-const constants = require('./constant.json')
+const constants = require('./constant.json');
 require('dotenv').config();
 const app = express();
 const routes = require('./routes/routes');
@@ -25,8 +25,8 @@ app.use('/', routes);
 
 // catch 404 and forwarding to error handler
 app.use(function(request, response, next) {
-    response.status(constants.HttpStatus.NOT_FOUND)
-    response.send(constants.ERROR.NO_URL_FOUND)
+    response.status(constants.HttpStatus.NOT_FOUND);
+    response.send(constants.ERROR.NO_URL_FOUND);
 });
 
 // development error handler
