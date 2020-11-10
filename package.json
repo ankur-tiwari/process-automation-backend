@@ -18,7 +18,7 @@
     "mssql": "^4.3.0",
     "pg": "^7.6.1",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.42.0",
+    "sequelize": "^5.15.1",
     "static-favicon": "~1.0.0"
   }
 }
